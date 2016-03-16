@@ -128,6 +128,8 @@ if(isset($_POST["submit"])){
   <div class='fieldset'>
     <legend>Register Now</legend>
     <form action="signup.php" method="post" onsubmit="return validateForm()" name="myForm">
+          <h2 style="text-align:center">Personal Info</h2>
+
       <div class='row'>
         <!-- <label for='first_name'>First Name</label> -->
         <input type="text" placeholder="First Name" name='first_name' id='first_name' required>
@@ -214,6 +216,26 @@ if(isset($_POST["submit"])){
       <div class='row'>
         <!-- <label for='zip'>Zip Code</label> -->
         <input type="text" placeholder="Zip" name='zip' id='zip' required>
+      </div>
+      
+      <h2 style="text-align:center">Banking Info</h2>
+      <div class='row'>
+        <label for='cc_number' id="spec">Credit Card</label>
+
+        <!-- <label for='zip'>Zip Code</label> -->
+        <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" name='cc_number' id='cc_number' required>
+      </div>
+      <div class='row'>
+        <label for='CVV' id="spec">CCV</label>
+
+        <!-- <label for='zip'>Zip Code</label> -->
+        <input type="text" placeholder="XXX" name='CVV' id='CVV' required>
+      </div>
+      <div class='row'>
+        <label for='expiration' id="spec">Expiration Date</label>
+
+        <!-- <label for='zip'>Zip Code</label> -->
+        <input type="text" placeholder="XX/XX" name='expiration' id='expiration' required>
       </div>
       
       <input type="submit" name="submit" value="Register">
@@ -332,6 +354,8 @@ if(isset($_POST["submit"])){
     function validateForm() {
       var arr = new Array();
       var re = /^[A-Za-z]+$/;
+      var address_re = /^[A-Za-z0-9]+$/;
+      var zip_re = /^[0-9\-]+$/;
 
       var first_name = document.forms["myForm"]["first_name"].value;
       if(!re.test(first_name))
@@ -344,6 +368,18 @@ if(isset($_POST["submit"])){
       var email = document.forms["myForm"]["email"].value;
       if((email.indexOf(".") == -1))
          arr.push("Please include an email address of the format: email@example.com.")
+
+       var address = document.forms["myForm"]["address"].value;
+        if((!address_re.test(address)))
+         arr.push("Please do not include any special characters in field: Address.")
+
+       var city = document.forms["myForm"]["city"].value;
+       if((!re.test(city)))
+        arr.push("Please only use A-Za-z characters on field: City.")
+
+      var zip = document.forms["myForm"]["zip"].value;
+      if(!zip_re.test(zip))
+        arr.push("Please only use 0-9 digits on field: Zip.")
 
 //       var state = document.forms["myForm"]["state"].value;
 //       var b = false;
