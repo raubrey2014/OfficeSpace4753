@@ -18,6 +18,47 @@
     <link href="assets/css/main.css" rel="stylesheet">
 
   <script src="assets/js/Chart.js"></script>
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+  <script type="text/javascript">
+
+
+      // This identifies your website in the createToken call below
+      Stripe.setPublishableKey('pk_test_TKhvjZGgA0yCt4pt5JmYbSgY');
+      // ...
+
+      var stripeResponseHandler = function(status, response) {
+          var $form = $('#payment-form');
+          if (response.error) {
+            // Show the errors on the form
+            $form.find('.payment-errors').text(response.error.message);
+            $('#submit_button').prop('disabled', false);
+            alert('Error');
+          } else {
+            // token contains id, last4, and card type
+            var token = response.id;
+            // Insert the token into the form so it gets submitted to the server
+            $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+            // and re-submit
+
+            $form.get(0).submit();
+
+          }
+        };
+
+        //Handles hitting submit
+        jQuery(function($) {
+          $('#payment-form').submit(function(e) {
+            var form = $(this);
+            // Disable the submit button to prevent repeated clicks
+            $('#submit_button').prop('disabled', true);
+            Stripe.card.createToken(form, stripeResponseHandler);
+            // Prevent the form from submitting with the default action
+            return false;
+          });
+        });
+  </script>
 
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -65,8 +106,7 @@
 	</div><!--  bluewrap -->
 
 <?php
-
-
+require_once('/Applications/XAMPP/htdocs/Ecommerce/stripe-php-3.10.0/init.php');
 
 $db = new mysqli('localhost', 'root', '', 'OfficeSpace2');
 if($db->connect_error){
@@ -74,7 +114,7 @@ if($db->connect_error){
 }
 
 
-if(isset($_POST["submit"])){
+if(isset($_POST["stripeToken"])){
   $first_name = $_POST["first_name"];
   $last_name = $_POST["last_name"];
   $email = $_POST["email"];
@@ -83,23 +123,35 @@ if(isset($_POST["submit"])){
   $city = $_POST["city"];
   $state = $_POST["state"];
   $zip = $_POST["zip"];
-  
-
-  
-  
 
   #check if email already is in use
-  $result = $db->query("SELECT * from Member where email='$email'");
-  $rowCount = $result->num_rows;
-  if($rowCount != 0){
-    // echo "An account with this email already exists!";
-    // alert('An account exists using that email address.'); 
-
-  }else{
-
+  // $result = $db->query("SELECT * from Member where email='$email'");
+  // $rowCount = $result->num_rows;
+  // if($rowCount != 0){
+  //   // echo "An account with this email already exists!";
+  //   // alert('An account exists using that email address.'); 
+  // }
+  //else{
     #insert maker into <makers> table
-    $query = "INSERT INTO Member (first_name, last_name, email, password, address, city, state, zip) values ('$first_name', '$last_name', '$email', '$password', '$address', '$city', '$state', '$zip')";
+    $query = "INSERT INTO Member (first_name, last_name, email, address, city, state, zip) values ('$first_name', '$last_name', '$email', '$address', '$city', '$state', '$zip')";
     $res = $db->query($query) or die ("invalid: ". $db->error);
+
+    \Stripe\Stripe::setApiKey("sk_test_vHRU4PTYGgKZ7NlWsdUU3CAI");
+
+        // Get the credit card details submitted by the form
+    $token = $_POST['stripeToken'];
+
+    // Create the charge on Stripe's servers - this will charge the user's card
+    try {
+      $charge = \Stripe\Charge::create(array(
+        "amount" => 1000, // amount in cents, again
+        "currency" => "usd",
+        "source" => $token,
+        "description" => "Example charge"
+        ));
+    } catch(\Stripe\Error\Card $e) {
+      // The card has been declined
+    }
     header("Location: index.html");
     exit;
     // #email confirmation 
@@ -116,10 +168,9 @@ if(isset($_POST["submit"])){
     //   echo 'Please check your email for a message w/ your password';
     // }
 
+  //}
 
-  }
-
-}
+ }
 
 
 ?>
@@ -129,7 +180,9 @@ if(isset($_POST["submit"])){
 <div id="registration-form">
   <div class='fieldset'>
     <legend>Register Now</legend>
-    <form action="signup.php" method="post" onsubmit="return validateForm()" name="myForm">
+    <form action="signup.php" method="post" onsubmit="return validateForm()" name="myForm" id="payment-form">
+          <span class="payment-errors"></span>
+
           <h2 style="text-align:center">Personal Info</h2>
 
       <div class='row'>
@@ -139,7 +192,7 @@ if(isset($_POST["submit"])){
       <div class='row'>
         <!-- <label for='last_name'>Last Name</label> -->
         <input type="text" placeholder="Last Name" name='last_name' id='last_name' required>
-      </div>
+      </div>  
       <div class='row'>
         <!-- <label for="email">E-mail</label> -->
         <input type="email" placeholder="E-mail"  name='email' required>
@@ -157,7 +210,7 @@ if(isset($_POST["submit"])){
 
         <label for='state' id="spec">State</label>
 
-<select name="state">
+<select name="state" size="2">
 
       <option value="AL">Alabama</option>
       <option value="AK">Alaska</option>
@@ -223,102 +276,32 @@ if(isset($_POST["submit"])){
         <label for='cc_number' id="spec">Credit Card</label>
 
         <!-- <label for='zip'>Zip Code</label> -->
-        <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" name='cc_number' id='cc_number' required>
-      </div>
+        <input type="text" size="20" placeholder="XXXX-XXXX-XXXX-XXXX" data-stripe="number"/>
+
+<!--         <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" name='cc_number' id='cc_number' required data-stripe="number">
+ -->
+       </div>
       <div class='row'>
-        <label for='CVV' id="spec">CCV</label>
+        <label for='CVV' id="spec">CVV</label>
 
         <!-- <label for='zip'>Zip Code</label> -->
-        <input type="text" placeholder="XXX" name='CVV' id='CVV' required>
+        <input type="text" placeholder="XXX" name='CVV' id='CVV' required data-stripe="cvc">
       </div>
       <div class='row'>
         <label for='expiration' id="spec">Expiration Date</label>
-
+        <input type="text" size="2" data-stripe="exp-month" placeholder="XX" name='exp-month' id='exp-month'/>
         <!-- <label for='zip'>Zip Code</label> -->
-        <input type="text" placeholder="XX/XX" name='expiration' id='expiration' required>
+        <input type="text" size="4" data-stripe="exp-year" placeholder="XXXX" name='exp-year' id='exp-year'/>
+
+        <!-- <input type="text" placeholder="XX/XX" name='expiration' id='expiration' required> -->
       </div>
       
-      <input type="submit" name="submit" value="Register">
+      
+      <input type="submit" name="submit_button" value="Register" id="submit_button">
     </form>
   </div>
 </div>
-		<!-- <form method = "POST" action = "signup.php" onsubmit="return validateForm()" name="myForm">
-  
-      <h1>Welcome! Please enter a name, valid email address and password to create maker account</h1>
-      <b>First Name: </b>
-      <b><input type = "text" name = "first_name" required></b><br>
-      <b>Last Name: </b>
-      <b><input type = "text" name = "last_name" required></b><br>
-      
-      <b>Email: </b>
-      <b><input type = "email" name = "email" required></b><br>
-      <b>Password: </b>
-      <b><input type = "password" name = "password" required></b><br>
-      <b>Address: </b>
-      <b><input type = "" name = "address" required></b><br>
-      <b>City: </b>
-      <b><input type = "" name = "city" required></b><br>
-      <b>State: </b>
-      <select name="state">
-      <option value="AL">Alabama</option>
-      <option value="AK">Alaska</option>
-      <option value="AZ">Arizona</option>
-      <option value="AR">Arkansas</option>
-      <option value="CA">California</option>
-      <option value="CO">Colorado</option>
-      <option value="CT">Connecticut</option>
-      <option value="DE">Delaware</option>
-      <option value="DC">District Of Columbia</option>
-      <option value="FL">Florida</option>
-      <option value="GA">Georgia</option>
-      <option value="HI">Hawaii</option>
-      <option value="ID">Idaho</option>
-      <option value="IL">Illinois</option>
-      <option value="IN">Indiana</option>
-      <option value="IA">Iowa</option>
-      <option value="KS">Kansas</option>
-      <option value="KY">Kentucky</option>
-      <option value="LA">Louisiana</option>
-      <option value="ME">Maine</option>
-      <option value="MD">Maryland</option>
-      <option value="MA">Massachusetts</option>
-      <option value="MI">Michigan</option>
-      <option value="MN">Minnesota</option>
-      <option value="MS">Mississippi</option>
-      <option value="MO">Missouri</option>
-      <option value="MT">Montana</option>
-      <option value="NE">Nebraska</option>
-      <option value="NV">Nevada</option>
-      <option value="NH">New Hampshire</option>
-      <option value="NJ">New Jersey</option>
-      <option value="NM">New Mexico</option>
-      <option value="NY">New York</option>
-      <option value="NC">North Carolina</option>
-      <option value="ND">North Dakota</option>
-      <option value="OH">Ohio</option>
-      <option value="OK">Oklahoma</option>
-      <option value="OR">Oregon</option>
-      <option value="PA">Pennsylvania</option>
-      <option value="RI">Rhode Island</option>
-      <option value="SC">South Carolina</option>
-      <option value="SD">South Dakota</option>
-      <option value="TN">Tennessee</option>
-      <option value="TX">Texas</option>
-      <option value="UT">Utah</option>
-      <option value="VT">Vermont</option>
-      <option value="VA">Virginia</option>
-      <option value="WA">Washington</option>
-      <option value="WV">West Virginia</option>
-      <option value="WI">Wisconsin</option>
-      <option value="WY">Wyoming</option>
-    </select><br>
-      <b>Zip Code: </b>
-      <b><input type = "text" name = "zip" required></b><br>
-      
-      
-      <b><input type = "submit" name = "submit" value = "enter site"></b><br>
-      <br>
-    </form> -->
+		
 	</div><!-- container -->
 </div>
 
@@ -354,7 +337,7 @@ if(isset($_POST["submit"])){
     function validateForm() {
       var arr = new Array();
       var re = /^[A-Za-z]+$/;
-      var address_re = /^[A-Za-z0-9]+$/;
+      var address_re = /^[A-Za-z0-9 '.]+$/;
       var zip_re = /^[0-9\-]+$/;
       var cc_re = /^[0-9]{4}\-[0-9]{4}\-[0-9]{4}\-[0-9]{4}$/;
       var cc_cvv = /^[0-9][0-9][0-9]$/;
@@ -383,15 +366,16 @@ if(isset($_POST["submit"])){
       if(!zip_re.test(zip))
         arr.push("Please only use 0-9 digits on field: Zip.")
 
-      var cc_number = document.forms["myForm"]["cc_number"].value;
-      alert(cc_number);
-      if(!cc_re.test(cc_number))
-        arr.push("Please follow the format XXXX-XXXX-XXXX-XXXX with 0-9 characters on field: Credit Card.")
+      // var cc_number = document.forms["myForm"]["cc_number"].value;
+      // alert(cc_number);
+      // if(!cc_re.test(cc_number))
+      //   arr.push("Please follow the format XXXX-XXXX-XXXX-XXXX with 0-9 characters on field: Credit Card.")
 
-       var CVV = document.forms["myForm"]["CVV"].value;
-      if(!cc_cvv.test(CVV))
-        arr.push("Please follow the format XXX with 0-9 characters on field: CVV.");
+      //  var CVV = document.forms["myForm"]["CVV"].value;
+      // if(!cc_cvv.test(CVV))
+      //   arr.push("Please follow the format XXX with 0-9 characters on field: CVV.");
 
+      // var expiration = document.forms["myForm"]["expiration"].value;
 //       var state = document.forms["myForm"]["state"].value;
 //       var b = false;
 //       var states =    ["AK","AL","AR","AS","AZ","CA","CO","CT","DC","DE",
