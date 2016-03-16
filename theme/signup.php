@@ -34,7 +34,7 @@
             // Show the errors on the form
             $form.find('.payment-errors').text(response.error.message);
             $('#submit_button').prop('disabled', false);
-            alert('Error');
+            alert(response.error.message);
           } else {
             // token contains id, last4, and card type
             var token = response.id;
