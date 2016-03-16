@@ -106,7 +106,7 @@
 	</div><!--  bluewrap -->
 
 <?php
-require_once('/Applications/XAMPP/htdocs/Ecommerce/stripe-php-3.10.0/init.php');
+require_once('../stripe-php-3.10.0/init.php');
 
 $db = new mysqli('localhost', 'root', '', 'OfficeSpace2');
 if($db->connect_error){
