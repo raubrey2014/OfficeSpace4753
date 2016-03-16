@@ -78,7 +78,7 @@ if(isset($_POST["submit"])){
   $first_name = $_POST["first_name"];
   $last_name = $_POST["last_name"];
   $email = $_POST["email"];
-  $password = $_POST["password"];
+  // $password = $_POST["passwordq"];
   $address = $_POST["address"];
   $city = $_POST["city"];
   $state = $_POST["state"];
@@ -93,6 +93,8 @@ if(isset($_POST["submit"])){
   $rowCount = $result->num_rows;
   if($rowCount != 0){
     // echo "An account with this email already exists!";
+    // alert('An account exists using that email address.'); 
+
   }else{
 
     #insert maker into <makers> table
@@ -210,9 +212,7 @@ if(isset($_POST["submit"])){
       <option value="WY">Wyoming</option>
     </select>
       </div>
-      <script>
-
-</script>
+      
       <div class='row'>
         <!-- <label for='zip'>Zip Code</label> -->
         <input type="text" placeholder="Zip" name='zip' id='zip' required>
@@ -356,6 +356,8 @@ if(isset($_POST["submit"])){
       var re = /^[A-Za-z]+$/;
       var address_re = /^[A-Za-z0-9]+$/;
       var zip_re = /^[0-9\-]+$/;
+      var cc_re = /^[0-9]{4}\-[0-9]{4}\-[0-9]{4}\-[0-9]{4}$/;
+      var cc_cvv = /^[0-9][0-9][0-9]$/;
 
       var first_name = document.forms["myForm"]["first_name"].value;
       if(!re.test(first_name))
@@ -380,6 +382,15 @@ if(isset($_POST["submit"])){
       var zip = document.forms["myForm"]["zip"].value;
       if(!zip_re.test(zip))
         arr.push("Please only use 0-9 digits on field: Zip.")
+
+      var cc_number = document.forms["myForm"]["cc_number"].value;
+      alert(cc_number);
+      if(!cc_re.test(cc_number))
+        arr.push("Please follow the format XXXX-XXXX-XXXX-XXXX with 0-9 characters on field: Credit Card.")
+
+       var CVV = document.forms["myForm"]["CVV"].value;
+      if(!cc_cvv.test(CVV))
+        arr.push("Please follow the format XXX with 0-9 characters on field: CVV.");
 
 //       var state = document.forms["myForm"]["state"].value;
 //       var b = false;
