@@ -133,13 +133,8 @@ if(isset($_POST["stripeToken"])){
   $mail->addAddress($email);
   $mail->Subject = "Thanks for Signing up with OfficeSpace!";
   $mail->Body = "This is a confirmation of your payment to sign up for OfficeSpace.";
-  if(!$mail->send()){
-    echo 'error: message not sent<br>';
-    echo $mail->ErrorInfo;
-  }
-  else{
-    echo 'Please check your email for a message w/ your password';
-  }
+  $mail->send();
+  
 
   #check if email already is in use
   // $result = $db->query("SELECT * from Member where email='$email'");
