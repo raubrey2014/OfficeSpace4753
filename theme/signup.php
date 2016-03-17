@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <?php include 'mailsender.php' ?> 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -70,6 +71,7 @@
 
   <body>
 
+
     <!-- Fixed navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -106,6 +108,8 @@
 	</div><!--  bluewrap -->
 
 <?php
+
+
 require_once('../stripe-php-3.10.0/init.php');
 
 $db = new mysqli('localhost', 'root', '', 'OfficeSpace2');
@@ -123,6 +127,19 @@ if(isset($_POST["stripeToken"])){
   $city = $_POST["city"];
   $state = $_POST["state"];
   $zip = $_POST["zip"];
+
+
+  $mail = createMailer();
+  $mail->addAddress($email);
+  $mail->Subject = "Thanks for Signing up with OfficeSpace!";
+  $mail->Body = "This is a confirmation of your payment to sign up for OfficeSpace.";
+  if(!$mail->send()){
+    echo 'error: message not sent<br>';
+    echo $mail->ErrorInfo;
+  }
+  else{
+    echo 'Please check your email for a message w/ your password';
+  }
 
   #check if email already is in use
   // $result = $db->query("SELECT * from Member where email='$email'");
@@ -152,7 +169,7 @@ if(isset($_POST["stripeToken"])){
     } catch(\Stripe\Error\Card $e) {
       // The card has been declined
     }
-    header("Location: index.html");
+    //header("Location: index.html");
     exit;
     // #email confirmation 
 
