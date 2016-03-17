@@ -166,7 +166,9 @@ a:after {
 #headerwrap {
 	background: url(../img/header-bg.jpg) no-repeat center top;
 	margin-top: -10px;
-	padding-top:20px;
+	/*padding-top:20px;*/
+  padding-top:0px;
+
 	text-align:center;
 	background-attachment: relative;
 	background-position: center center;
@@ -565,6 +567,30 @@ margin-left:5px;
 -ms-transition:background-color .5s ease;
 transition:background-color .5s ease;
 }
+#registration-form input[type=text2] {
+    padding: 15px 20px;
+    border-radius: 1px;
+  margin:5px auto;
+  background-color:#f7f7f7;
+    border: 1px solid silver;
+
+    -webkit-box-shadow: inset 0 1px 5px rgba(0,0,0,0.2);
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.2), 0 1px rgba(255,255,255,.8);
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+  -webkit-transition:background-color .5s ease;
+-moz-transition:background-color .5s ease;
+-o-transition:background-color .5s ease;
+-ms-transition:background-color .5s ease;
+transition:background-color .5s ease;
+}
+.row_special {
+  width: 33%;
+}
+
 #registration-form input[type=email] {
     padding: 15px 20px;
     border-radius: 1px;

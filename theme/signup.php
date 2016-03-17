@@ -43,7 +43,7 @@
             // and re-submit
 
             $form.get(0).submit();
-
+            // alert("Your payment has been processed. Enjoy our extensive features.");
           }
         };
 
@@ -152,7 +152,7 @@ if(isset($_POST["stripeToken"])){
     } catch(\Stripe\Error\Card $e) {
       // The card has been declined
     }
-    header("Location: index.html");
+    header("Location: index.php?success=true");
     exit;
     // #email confirmation 
 
@@ -185,117 +185,114 @@ if(isset($_POST["stripeToken"])){
 
           <h2 style="text-align:center">Personal Info</h2>
 
-      <div class='row'>
+      <div class='row col-md-12'>
         <!-- <label for='first_name'>First Name</label> -->
         <input type="text" placeholder="First Name" name='first_name' id='first_name' required>
       </div>
-      <div class='row'>
+      <div class='row col-md-12'>
         <!-- <label for='last_name'>Last Name</label> -->
         <input type="text" placeholder="Last Name" name='last_name' id='last_name' required>
       </div>  
-      <div class='row'>
+      <div class='row col-md-12'>
         <!-- <label for="email">E-mail</label> -->
         <input type="email" placeholder="E-mail"  name='email' required>
       </div>
-      <div class='row'>
+      <div class='row col-md-12'>
         <!-- <label for='address'>Address</label> -->
         <input type="text" placeholder="Address" name='address' id='address' required>
       </div>
-      <div class='row'>
+      <div class='row col-md-12'>
         <!-- <label for='city'>City</label> -->
         <input type="text" placeholder="City" name='city' id='city' required>
       </div>
-      <div class='row'>
+      <div class='row col-md-12'>
         <!-- <input type="text" maxlength="2" placeholder="State" onchange="validateState(this);"/> -->
 
         <label for='state' id="spec">State</label>
 
-<select name="state" size="2">
+        <select name="state" size="2">
 
-      <option value="AL">Alabama</option>
-      <option value="AK">Alaska</option>
-      <option value="AZ">Arizona</option>
-      <option value="AR">Arkansas</option>
-      <option value="CA">California</option>
-      <option value="CO">Colorado</option>
-      <option value="CT">Connecticut</option>
-      <option value="DE">Delaware</option>
-      <option value="DC">District Of Columbia</option>
-      <option value="FL">Florida</option>
-      <option value="GA">Georgia</option>
-      <option value="HI">Hawaii</option>
-      <option value="ID">Idaho</option>
-      <option value="IL">Illinois</option>
-      <option value="IN">Indiana</option>
-      <option value="IA">Iowa</option>
-      <option value="KS">Kansas</option>
-      <option value="KY">Kentucky</option>
-      <option value="LA">Louisiana</option>
-      <option value="ME">Maine</option>
-      <option value="MD">Maryland</option>
-      <option value="MA">Massachusetts</option>
-      <option value="MI">Michigan</option>
-      <option value="MN">Minnesota</option>
-      <option value="MS">Mississippi</option>
-      <option value="MO">Missouri</option>
-      <option value="MT">Montana</option>
-      <option value="NE">Nebraska</option>
-      <option value="NV">Nevada</option>
-      <option value="NH">New Hampshire</option>
-      <option value="NJ">New Jersey</option>
-      <option value="NM">New Mexico</option>
-      <option value="NY">New York</option>
-      <option value="NC">North Carolina</option>
-      <option value="ND">North Dakota</option>
-      <option value="OH">Ohio</option>
-      <option value="OK">Oklahoma</option>
-      <option value="OR">Oregon</option>
-      <option value="PA">Pennsylvania</option>
-      <option value="RI">Rhode Island</option>
-      <option value="SC">South Carolina</option>
-      <option value="SD">South Dakota</option>
-      <option value="TN">Tennessee</option>
-      <option value="TX">Texas</option>
-      <option value="UT">Utah</option>
-      <option value="VT">Vermont</option>
-      <option value="VA">Virginia</option>
-      <option value="WA">Washington</option>
-      <option value="WV">West Virginia</option>
-      <option value="WI">Wisconsin</option>
-      <option value="WY">Wyoming</option>
-    </select>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="DC">District Of Columbia</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="HI">Hawaii</option>
+              <option value="ID">Idaho</option>
+              <option value="IL">Illinois</option>
+              <option value="IN">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
+            </select>
       </div>
       
-      <div class='row'>
-        <!-- <label for='zip'>Zip Code</label> -->
+      <div class='row col-md-12'>
         <input type="text" placeholder="Zip" name='zip' id='zip' required>
       </div>
       
       <h2 style="text-align:center">Banking Info</h2>
-      <div class='row'>
+      <div class='row col-md-12'>
         <label for='cc_number' id="spec">Credit Card</label>
 
-        <!-- <label for='zip'>Zip Code</label> -->
-        <input type="text" size="20" placeholder="XXXX-XXXX-XXXX-XXXX" data-stripe="number"/>
+        <input type="text" size="20" placeholder="XXXX-XXXX-XXXX-XXXX" data-stripe="number" required/>
 
-<!--         <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" name='cc_number' id='cc_number' required data-stripe="number">
- -->
+
        </div>
-      <div class='row'>
+      <div class='row col-md-4'>
         <label for='CVV' id="spec">CVV</label>
-
+        <br>
         <!-- <label for='zip'>Zip Code</label> -->
-        <input type="text" placeholder="XXX" name='CVV' id='CVV' required data-stripe="cvc">
+        <input type="text2" placeholder="XXX" name='CVV' id='CVV' required data-stripe="cvc">
       </div>
-      <div class='row'>
+      <div class='row col-md-4'>
         <label for='expiration' id="spec">Expiration Date</label>
-        <input type="text" size="2" data-stripe="exp-month" placeholder="XX" name='exp-month' id='exp-month'/>
-        <!-- <label for='zip'>Zip Code</label> -->
-        <input type="text" size="4" data-stripe="exp-year" placeholder="XXXX" name='exp-year' id='exp-year'/>
-
-        <!-- <input type="text" placeholder="XX/XX" name='expiration' id='expiration' required> -->
+        <br>
+        <input type="text2" size="2" data-stripe="exp-month" placeholder="XX" name='exp-month' id='exp-month' required/>
+        <input type="text2" size="5" data-stripe="exp-year" placeholder="XXXX" name='exp-year' id='exp-year' required/>
       </div>
-      
+      <div class='row col-md-4'>
+        <h4>Joining the <i class="fa fa-circle"></i>ffice Space family for only $10.00</h4>
+      </div>
       
       <input type="submit" name="submit_button" value="Register" id="submit_button">
     </form>

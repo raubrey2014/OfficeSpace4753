@@ -50,6 +50,18 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
+    <?php
+    	if(isset($_GET["success"])){
+    		if($_GET["success"] == "true"){
+    			?>
+    			<div class="alert alert-success  fade in">
+				  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				  <strong>Success!</strong> Thank you for registering with <i class="fa fa-circle"></i>ffice Space!
+				</div>
+    			<?php
+    		}
+    	}
+    ?>
 
 	<div id="headerwrap">
 		<div class="container">
