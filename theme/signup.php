@@ -210,7 +210,7 @@ if(isset($_POST["stripeToken"])){
 
         <label for='state' id="spec">State</label>
 
-        <select name="state" size="2">
+        <select name="state">
 
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
