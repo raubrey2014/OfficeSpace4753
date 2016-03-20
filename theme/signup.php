@@ -81,11 +81,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html"><i class="fa fa-circle"></i>ffice Space</a>
+          <a class="navbar-brand" href="index.php"><i class="fa fa-circle"></i>ffice Space</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="index.html">HOME</a></li>
+            <li><a href="index.php">HOME</a></li>
             <li><a href="about.html">ABOUT</a></li>
             <li class='active'><a href="#">SIGN UP</a></li>
 
@@ -106,10 +106,7 @@
 			</div><!-- row -->
 		</div><!-- container -->
 	</div><!--  bluewrap -->
-
 <?php
-
-
 require_once('../stripe-php-3.10.0/init.php');
 
 $db = new mysqli('localhost', 'root', '', 'OfficeSpace2');
@@ -164,28 +161,13 @@ if(isset($_POST["stripeToken"])){
     } catch(\Stripe\Error\Card $e) {
       // The card has been declined
     }
-    header("Location: index.php?success=true");
-
-    exit;
-    // #email confirmation 
-
-    // $mail = createMailer();
-    // $mail->addAddress($email);
-    // $mail->Subject = "Welcome $name!";
-    // $mail->Body = "Welcome, new maker $name! This is a confirmation email verifying your email address.";
-    // if(!$mail->send()){
-    //   echo 'error: message not sent<br>';
-    //   echo $mail->ErrorInfo;
-    // }
-    // else{
-    //   echo 'Please check your email for a message w/ your password';
-    // }
-
-  //}
-
+    // header("Location: index.php?success=true");
+    // exit;?>
+    <script type="text/javascript">
+      window.location.href = 'index.php?success=true';
+    </script>
+<?php
  }
-
-
 ?>
 <div id="custom-wrapper2">
 	<div class="container w">
@@ -346,11 +328,9 @@ if(isset($_POST["stripeToken"])){
     <script type="text/javascript">
     function validateForm() {
       var arr = new Array();
-      var re = /^[A-Za-z]+$/;
+      var re = /^[A-Za-z\-]+$/;
       var address_re = /^[A-Za-z0-9 '.]+$/;
       var zip_re = /^[0-9\-]+$/;
-      var cc_re = /^[0-9]{4}\-[0-9]{4}\-[0-9]{4}\-[0-9]{4}$/;
-      var cc_cvv = /^[0-9][0-9][0-9]$/;
 
       var first_name = document.forms["myForm"]["first_name"].value;
       if(!re.test(first_name))
@@ -376,32 +356,6 @@ if(isset($_POST["stripeToken"])){
       if(!zip_re.test(zip))
         arr.push("Please only use 0-9 digits on field: Zip.")
 
-      // var cc_number = document.forms["myForm"]["cc_number"].value;
-      // alert(cc_number);
-      // if(!cc_re.test(cc_number))
-      //   arr.push("Please follow the format XXXX-XXXX-XXXX-XXXX with 0-9 characters on field: Credit Card.")
-
-      //  var CVV = document.forms["myForm"]["CVV"].value;
-      // if(!cc_cvv.test(CVV))
-      //   arr.push("Please follow the format XXX with 0-9 characters on field: CVV.");
-
-      // var expiration = document.forms["myForm"]["expiration"].value;
-//       var state = document.forms["myForm"]["state"].value;
-//       var b = false;
-//       var states =    ["AK","AL","AR","AS","AZ","CA","CO","CT","DC","DE",
-// "FL","GA","GU","HI","IA",
-// "ID","IL","IN","KS","KY","LA","MA","MD","ME","MH","MI","MN","MO","MS","MT",
-// "NC","ND","NE","NH","NJ","NM","NV","NY","OH","OK","OR","PA","PR","PW","RI",
-// "SC","SD","TN","TX","UT","VA","VI","VT","WA","WI","WV","WY"];
-//     for(var i=0;i< states.length;i++) {
-//       if(state.toUpperCase() == states[i]) {
-//         b = true;
-//       }
-//     }
-//     if(!b){
-//          arr.push("Please include a valid state extension for field: State.")
-
-//     }
 
        if (arr.length > 0){
         var str = arr.join("\n");        
