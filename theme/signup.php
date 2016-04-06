@@ -88,6 +88,7 @@
             <li><a href="index.php">HOME</a></li>
             <li><a href="about.html">ABOUT</a></li>
             <li class='active'><a href="#">SIGN UP</a></li>
+            <li><a href="signin.php">SIGN IN</a></li>
 
            <!--  <li><a href="services.html">SERVICES</a></li>
             <li><a href="works.html">WORKS</a></li> -->
@@ -119,7 +120,7 @@ if(isset($_POST["stripeToken"])){
   $first_name = $_POST["first_name"];
   $last_name = $_POST["last_name"];
   $email = $_POST["email"];
-  // $password = $_POST["passwordq"];
+  $password = $_POST["password"];
   $address = $_POST["address"];
   $city = $_POST["city"];
   $state = $_POST["state"];
@@ -142,7 +143,7 @@ if(isset($_POST["stripeToken"])){
   // }
   //else{
     #insert maker into <makers> table
-    $query = "INSERT INTO Member (first_name, last_name, email, address, city, state, zip) values ('$first_name', '$last_name', '$email', '$address', '$city', '$state', '$zip')";
+    $query = "INSERT INTO Member (first_name, last_name, email, password, address, city, state, zip) values ('$first_name', '$last_name', '$email', '$password', '$address', '$city', '$state', '$zip')";
     $res = $db->query($query) or die ("invalid: ". $db->error);
 
     \Stripe\Stripe::setApiKey("sk_test_vHRU4PTYGgKZ7NlWsdUU3CAI");
@@ -191,6 +192,10 @@ if(isset($_POST["stripeToken"])){
       <div class='row col-md-12'>
         <!-- <label for="email">E-mail</label> -->
         <input type="email" placeholder="E-mail"  name='email' required>
+      </div>
+      <div class='row col-md-12'>
+        <!-- <label for="email">E-mail</label> -->
+        <input type="password" placeholder="Password" autocomplete='off' name='password' required>
       </div>
       <div class='row col-md-12'>
         <!-- <label for='address'>Address</label> -->
@@ -331,6 +336,7 @@ if(isset($_POST["stripeToken"])){
       var re = /^[A-Za-z\-]+$/;
       var address_re = /^[A-Za-z0-9 '.]+$/;
       var zip_re = /^[0-9\-]+$/;
+      var password_re = /^[a-zA-Z0-9~@#$^*()_+=[\]{}|\\,.?:-]*$/;
 
       var first_name = document.forms["myForm"]["first_name"].value;
       if(!re.test(first_name))
@@ -343,6 +349,10 @@ if(isset($_POST["stripeToken"])){
       var email = document.forms["myForm"]["email"].value;
       if((email.indexOf(".") == -1))
          arr.push("Please include an email address of the format: email@example.com.")
+
+      var password = document.forms["myForm"]["email"].value;
+      if((!password_re.test(password)))
+         arr.push("Please choose a password without spaces.")
 
        var address = document.forms["myForm"]["address"].value;
         if((!address_re.test(address)))
