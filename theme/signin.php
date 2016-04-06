@@ -108,6 +108,19 @@ if(isset($_POST["submit"])){
 <div id="registration-form">
   <div class='fieldset'>
     <legend>Sign In</legend>
+        <?php
+      if(isset($_GET["error"])){
+        if($_GET["error"] == "true"){
+          ?>
+          <div class="alert alert-danger  fade in">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Error!</strong> Incorrect username or password. Please try again.
+        </div>
+          <?php
+        }
+      }
+    ?>
+
     <form action="process.php" method="post" name="myForm" id="payment-form">
           <span class="payment-errors"></span>
 

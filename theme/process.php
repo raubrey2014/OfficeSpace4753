@@ -15,7 +15,7 @@ if($db->connect_error){
     if($rowCount == 0){
     #header('Location: login.php');
       echo "Incorrect Login";
-      header('Location: signin.php');
+      header('Location: signin.php?error=true');
     }
     else{
       $row = $result->fetch_array();
