@@ -44,6 +44,8 @@
             <li class="active"><a href="index.php">HOME</a></li>
             <li><a href="about.html">ABOUT</a></li>
             <li><a href="signup.php">SIGN UP</a></li>
+            <li><a href="signin.php">SIGN IN</a></li>
+
             <!-- <li><a href="works.html">WORKS</a></li> -->
             <!-- <li><a data-toggle="modal" data-target="#myModal" href="#myModal"><i class="fa fa-envelope-o"></i></a></li> -->
           </ul>
@@ -57,6 +59,31 @@
     			<div class="alert alert-success  fade in">
 				  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 				  <strong>Success!</strong> Thank you for registering with <i class="fa fa-circle"></i>ffice Space!
+				</div>
+    			<?php
+    		}
+    	}
+    ?>
+    <?php
+    	if(isset($_GET["signedin"])){
+    		if($_GET["signedin"] == "false"){
+    			?>
+    			<div class="alert alert-warning  fade in">
+				  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				  <strong>Warning!</strong> You are not logged in!
+				</div>
+    			<?php
+    		}
+    	}
+    ?>
+
+    <?php
+    	if(isset($_GET["signout"])){
+    		if($_GET["signout"] == "true"){
+    			?>
+    			<div class="alert alert-success  fade in">
+				  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				  <strong>You have successfully logged out.</strong>
 				</div>
     			<?php
     		}

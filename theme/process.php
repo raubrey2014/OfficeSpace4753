@@ -22,7 +22,7 @@ if($db->connect_error){
 
 
       //$_SESSION["logged"] = 1;
-      header('Location: index.php');
+      header('Location: member.php');
     }
 
    

@@ -1,3 +1,8 @@
+<?php 
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -117,22 +122,8 @@ if($db->connect_error){
 
 
 if(isset($_POST["stripeToken"])){
-  $first_name = $_POST["first_name"];
-  $last_name = $_POST["last_name"];
-  $email = $_POST["email"];
-  $password = $_POST["password"];
-  $address = $_POST["address"];
-  $city = $_POST["city"];
-  $state = $_POST["state"];
-  $zip = $_POST["zip"];
 
 
-  $mail = createMailer();
-  $mail->addAddress($email);
-  $mail->Subject = "Thanks for Signing up with OfficeSpace!";
-  $mail->Body = "This is a confirmation of your payment to sign up for OfficeSpace.";
-  $mail->send();
-  
 
   #check if email already is in use
   // $result = $db->query("SELECT * from Member where email='$email'");
@@ -142,31 +133,47 @@ if(isset($_POST["stripeToken"])){
   //   // alert('An account exists using that email address.'); 
   // }
   //else{
-    #insert maker into <makers> table
-    $query = "INSERT INTO Member (first_name, last_name, email, password, address, city, state, zip) values ('$first_name', '$last_name', '$email', '$password', '$address', '$city', '$state', '$zip')";
-    $res = $db->query($query) or die ("invalid: ". $db->error);
+  #insert maker into <makers> table
+  $first_name = $_POST["first_name"];
+  $last_name = $_POST["last_name"];
+  $email = $_POST["email"];
+  $password = $_POST["password"];
+  $address = $_POST["address"];
+  $city = $_POST["city"];
+  $state = $_POST["state"];
+  $zip = $_POST["zip"];
 
-    \Stripe\Stripe::setApiKey("sk_test_vHRU4PTYGgKZ7NlWsdUU3CAI");
+  $query = "INSERT INTO Member (first_name, last_name, email, password, address, city, state, zip) values ('$first_name', '$last_name', '$email', '$password', '$address', '$city', '$state', '$zip')";
+  $res = $db->query($query) or die ("invalid: ". $db->error);
 
-        // Get the credit card details submitted by the form
-    $token = $_POST['stripeToken'];
+  \Stripe\Stripe::setApiKey("sk_test_vHRU4PTYGgKZ7NlWsdUU3CAI");
 
-    // Create the charge on Stripe's servers - this will charge the user's card
-    try {
-      $charge = \Stripe\Charge::create(array(
-        "amount" => 1000, // amount in cents, again
-        "currency" => "usd",
-        "source" => $token,
-        "description" => "Example charge"
-        ));
-    } catch(\Stripe\Error\Card $e) {
-      // The card has been declined
-    }
-    // header("Location: index.php?success=true");
-    // exit;?>
-    <script type="text/javascript">
-      window.location.href = 'index.php?success=true';
-    </script>
+  // Get the credit card details submitted by the form
+  $token = $_POST['stripeToken'];
+
+  // Create the charge on Stripe's servers - this will charge the user's card
+  try {
+    $charge = \Stripe\Charge::create(array(
+    "amount" => 1000, // amount in cents, again
+    "currency" => "usd",
+    "source" => $token,
+    "description" => "Example charge"
+    ));
+
+
+    $mail = createMailer();
+    $mail->addAddress($email);
+    $mail->Subject = "Thanks for Signing up with OfficeSpace!";
+    $mail->Body = "This is a confirmation of your payment to sign up for OfficeSpace.";
+    $mail->send();
+  } catch(\Stripe\Error\Card $e) {
+  // The card has been declined
+  }
+  // header("Location: index.php?success=true");
+  // exit;?>
+  <script type="text/javascript">
+  // window.location.href = 'index.php?success=true';
+  </script>
 <?php
  }
 ?>
@@ -179,7 +186,25 @@ if(isset($_POST["stripeToken"])){
     <form action="signup.php" method="post" onsubmit="return validateForm()" name="myForm" id="payment-form">
           <span class="payment-errors"></span>
 
-          <h2 style="text-align:center">Personal Info</h2>
+ 
+          <!-- ACCOUNT INFO -->
+      <h2 style="text-align:center">Account Info</h2>
+      <div class='row col-md-12'>
+        <!-- <label for="email">E-mail</label> -->
+        <input type="email" placeholder="E-mail"  name='email' required>
+      </div>
+      <div class='row col-md-12'>
+        <!-- <label for="email">E-mail</label> -->
+        <input type="password" placeholder="Password" autocomplete='off' name='password' required>
+      </div>
+      <div class='row col-md-12'>
+        <!-- <label for="email">E-mail</label> -->
+        <input type="password" placeholder="Repeat Password" autocomplete='off' name='password2' required>
+      </div>
+
+
+      <!-- PERSONAL INFO -->
+      <h2 style="text-align:center">Personal Info</h2>
 
       <div class='row col-md-12'>
         <!-- <label for='first_name'>First Name</label> -->
@@ -189,14 +214,7 @@ if(isset($_POST["stripeToken"])){
         <!-- <label for='last_name'>Last Name</label> -->
         <input type="text" placeholder="Last Name" name='last_name' id='last_name' required>
       </div>  
-      <div class='row col-md-12'>
-        <!-- <label for="email">E-mail</label> -->
-        <input type="email" placeholder="E-mail"  name='email' required>
-      </div>
-      <div class='row col-md-12'>
-        <!-- <label for="email">E-mail</label> -->
-        <input type="password" placeholder="Password" autocomplete='off' name='password' required>
-      </div>
+      
       <div class='row col-md-12'>
         <!-- <label for='address'>Address</label> -->
         <input type="text" placeholder="Address" name='address' id='address' required>
@@ -270,6 +288,7 @@ if(isset($_POST["stripeToken"])){
         <input type="text" placeholder="Zip" name='zip' id='zip' required>
       </div>
       
+      <!-- PAYMENT INFO -->
       <h2 style="text-align:center">Banking Info</h2>
       <div class='row col-md-12'>
         <label for='cc_number' id="spec">Credit Card</label>
@@ -350,9 +369,13 @@ if(isset($_POST["stripeToken"])){
       if((email.indexOf(".") == -1))
          arr.push("Please include an email address of the format: email@example.com.")
 
-      var password = document.forms["myForm"]["email"].value;
+      var password = document.forms["myForm"]["password"].value;
+      var password2 = document.forms["myForm"]["password2"].value;
       if((!password_re.test(password)))
          arr.push("Please choose a password without spaces.")
+
+       if(!(password === password2))
+         arr.push("Your passwords do not match.")
 
        var address = document.forms["myForm"]["address"].value;
         if((!address_re.test(address)))

@@ -1,3 +1,17 @@
+<?php 
+session_start();
+
+if(isset($_SESSION["logged"]) && ($_SESSION["logged"] == true)){
+  $logged = $_SESSION["logged"];
+}
+else {
+  header("Location: index.php?signedin=false");
+  exit;
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -43,10 +57,20 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="index.php">HOME</a></li>
-            <li class="active"><a href="about.html">ABOUT</a></li>
+            <li><a href="about.html">ABOUT</a></li>
             <li><a href="signup.php">SIGN UP</a></li>
-            <li><a href="signin.php">SIGN IN</a></li>
-            
+            <?php
+            if(isset($_SESSION["logged"])){
+              ?>
+                          <li class="active"><a href="signout.php">SIGN OUT</a></li>
+            <?php
+          }
+            else {
+              ?>
+              <li><a href="signin.php">SIGN IN</a></li>
+            <?php
+            }
+            ?>
 
            <!--  <li><a href="services.html">SERVICES</a></li>
             <li><a href="works.html">WORKS</a></li> -->
@@ -60,7 +84,7 @@
 		<div class="container">
 			<div class="row centered">
 				<div class="col-lg-8 col-lg-offset-2">
-				<h1 id='special_h1'><strong>About Us</strong></h1>
+				<h1 id='special_h1'><strong>MEMBER PAGE</strong></h1>
 				</div>
 			</div><!-- row -->
 		</div><!-- container -->

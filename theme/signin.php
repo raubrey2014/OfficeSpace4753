@@ -1,3 +1,8 @@
+<?php
+session_start();
+$_SESSION["logged"] = "HERE";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -91,10 +96,10 @@ if(isset($_POST["submit"])){
     }
     else{
       $row = $result->fetch_array();
-
-
+      $_SESSION["logged"] = true;
       //$_SESSION["logged"] = 1;
-      header('Location: index.php');
+      header('Location: member.php');
+      exit;
     }
 
    
@@ -125,16 +130,17 @@ if(isset($_POST["submit"])){
           <span class="payment-errors"></span>
 
 
-      <div class='row col-md-12'>
+      <div class=' col-md-12'>
         <!-- <label for="email">E-mail</label> -->
         <input type="email" placeholder="E-mail"  name='email' required>
       </div>
-      <div class='row col-md-12'>
+      <div class=' col-md-12'>
         <!-- <label for="email">E-mail</label> -->
         <input type="password" placeholder="Password"  name='password' required>
       </div>
-     
-      <input type="submit" name="submit" value="submit">
+      <div class=' col-md-12'> 
+        <input type="submit" name="submit" value="submit">
+      </div>
     </form>
   </div>
 </div>
