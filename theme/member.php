@@ -98,8 +98,8 @@ else {
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-10">
-                <h1 class="page-header">Page Heading
-                    <small>Secondary Text</small>
+                <h1 class="page-header">BE A
+                    <small>fucking boss</small>
                 </h1>
             </div>
             <div class="col-lg-2">
