@@ -94,6 +94,7 @@ else {
 <!-- Page Content -->
     <div class="container">
 
+
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-10">
@@ -163,6 +164,7 @@ else {
         <!-- /.row -->
 
         <hr>
+
 
         <!-- Project Four -->
         <div class="row">
