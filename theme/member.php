@@ -120,7 +120,7 @@ else {
                 <h3>2901 North Ashton Blvd.</h3>
                 <h4>Lehi, UT 84043 · 58,800 SF · Office For Lease</h4>
                 <p>5 Story Class A Office Building, completion April 1, 2016 with 54,800 square feet available on 2nd and 3rd Floors. Modern, progressive architecture. Excellent I-15 and SR 92 access. Located adjacent to the Thanksgiving Park Office Campus.</p>
-                <a class="btn btn-primary" href="item1.php">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
         <!-- /.row -->
@@ -158,7 +158,7 @@ else {
                 <p>The Offices at Pin Oak Park is a five-building office campus in a beautiful park-like setting amongst 100-year-old oak trees. 
                 Some of the many amenities include 24-hour security, after-hours card key access, free visitor parking in elevator-equipped garages, 
                 on-site banks and delicatessens, US Mail and overnight shipping drop-boxes, maid and porter service, fully staffed on-site engineering and management teams. Move-in ready suites are available.</p>
-                <a class="btn btn-primary" href="">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="btn btn-primary" href="detail_3.php">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
         <!-- /.row -->
@@ -179,7 +179,7 @@ else {
                 <h4>Los Angeles, CA 90017 · 8,420 SF · Office For Lease</h4>
                 <p>Fully Furnished Office Suites available on the Penthouse Floor of the LA Care Building with breathtaking unobstructed views of Downtown LA, West LA, Stadium Hill and out to the ocean. Brand new construction. 100 MBPS internet, coffee service, phone answering, conference room usage, concierge, and administrative support available. 
                 Rent includes utilities, cleaning service, 24/7 access, use of common areas such as business lounge, reception, kitchen, copy area, and more.</p>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="btn btn-primary" href="detail_4.php">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
         <!-- /.row -->
@@ -197,7 +197,7 @@ else {
                 <h3>75 West Towne Ridge Parkway</h3>
                 <h4>Sandy, UT 84070 · 125,000 SF · Office For Lease</h4>
                 <p>Class A Office Park. 25,000 rentable square foot floor plates. Generous improvement allowances. Excellent parking.Excellent location in Sandy.</p>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="btn btn-primary" href="detail_5.php">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
         <!-- /.row -->
