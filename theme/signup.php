@@ -203,6 +203,9 @@ if(isset($_POST["stripeToken"])){
       </div>
 
 
+
+
+
       <!-- PERSONAL INFO -->
       <h2 style="text-align:center">Personal Info</h2>
 

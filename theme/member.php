@@ -91,38 +91,29 @@ else {
 	</div><!--  bluewrap -->
 
 
-	<div class="container w">
-		<div class="row centered">
-			<br><br>
-			<div class="col-lg-5">
-				<img class="img-circle" style="margin-top:60px;" src="assets/img/building2.jpg" width="400" height="400" alt="">
-			</div><!-- col-lg-3 -->
+<!-- PORTFOLIO SECTION -->
+  <div id="dg">
+    <div class="container">
+      <div class="row centered">
+        <h2><b>Hear It First Hand</b></h2>
+        <br>
+        <div class="col-lg-4">
+        <img class="img-circle" src="assets/img/modern_office.jpg" width="300" height="300" alt="">
+        <p><b>"Office Space provided a scalable work space solution for my growing IT business."</b><br> -CEO John Doe of IT Inc., New York, NY</p>
+        </div>
 
-			<div class="col-lg-7">
-				<h2><strong>The Problem We Solve</strong></h2>
-				<h4 class="custom-size"><i class="fa fa-circle"></i>ffice Space is a client-driven company that strives to fill in the gaps in a unique market of buyers and sellers. One common denominator in almost all companies is a presence of wasted space, whether it be a temporary situation or a result of misallocation. As entrepreneurs and companies come in all shapes and sizes in this digital age, there is more than ever a demand for sub-spaces for rent or lease. We simply provide the connection between those looking for new spaces to grow, and those with the resources to help.</h4>
-				<h2><strong>We Are a Community of Innovation</strong></h2>
-				<h4 class="custom-size"> Our web and mobile platforms make it easy to find offices by location, size, and price, sidestepping the intimidating complexity of other, more traditional methods of search. Finally, because of our lean team and automated systems, we are able to provide our services for a competitive fee. All this culminates in a frictionless product that maximizes each client’s experience and resources to create new value in an age-old market.</h4>
+        <div class="col-lg-4">
+        <img class="img-circle" src="assets/img/modern_office2.jpg" width="300" height="300" alt="">
+        <p><b>"Office Space's intuitive, user-oriented design, and end-to-end functionality makes them a leader in painless work space services."</b><br> -HR Rep Sally Baker Company Inc., Cincinatti, OH</p>
+        </div>
 
-			</div><!-- col-lg-3 -->
-			<br>
-			<br>
-
-			<div class="col-lg-7" style="padding-top:100px">
-				<h2><strong>How It Works</strong></h2>
-				<h4 class="custom-size" >Our simple business proposal provides an outlet for any property owner to list unused building space for rent. We then can connect businesses of any size with appropriate office space that tailors to their needs. Listers pay a one time fee per property for our matching services, while renters and leasers can sign up for free. To learn more about pricing or find available properties near you, click the sign up link below. </h4>
-                <a href="signup.php"><button type="submit" class="btn btn-primary">Sign Up Now</button></a>
-
-			</div>
-			<div class="col-lg-5">
-				<img class="img-circle" style="margin-top:60px;" src="assets/img/building3.jpg" width="400" height="400" alt="">
-
-			</div>
-
-		</div><!-- row -->
-		<br>
-		<br>
-	</div><!-- container -->
+        <div class="col-lg-4">
+        <img class="img-circle" src="assets/img/exec_office.jpg" width="300" height="300" alt="">
+        <p><b>"Only Office Space was able to provide the personalized experience I needed when I started my own business."</b> <br>-Independent Consultant John Smith, Richmond, VA</p>
+        </div>
+      </div><!-- row -->
+    </div><!-- container -->
+  </div><!-- DG -->
 
 
 
