@@ -62,7 +62,9 @@ else {
             <?php
             if(isset($_SESSION["logged"])){
               ?>
-                          <li class="active"><a href="signout.php">SIGN OUT</a></li>
+                          <li class=""><a href="member.php">DASHBOARD</a></li>
+
+                          <li><a href="signout.php">SIGN OUT</a></li>
             <?php
           }
             else {
@@ -97,7 +99,7 @@ else {
         <!-- Portfolio Item Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Mockingbird Towers
+                <h1 class="page-header">The Offices at The Mockingbird Towers
                 </h1>
             </div>
         </div>

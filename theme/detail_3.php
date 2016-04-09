@@ -62,7 +62,9 @@ else {
             <?php
             if(isset($_SESSION["logged"])){
               ?>
-                          <li class="active"><a href="signout.php">SIGN OUT</a></li>
+                          <li class=""><a href="member.php">DASHBOARD</a></li>
+
+                          <li><a href="signout.php">SIGN OUT</a></li>
             <?php
           }
             else {
