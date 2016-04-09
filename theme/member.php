@@ -9,7 +9,6 @@ else {
   exit;
 }
 
-
 ?>
 
 <!DOCTYPE html>
@@ -117,7 +116,7 @@ else {
                 </a>
             </div>
             <div class="col-md-5">
-                <h3>Project One</h3>
+                <h3></h3>
                 <h4>Subheading</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
                 <a class="btn btn-primary" href="item1.php">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
@@ -131,7 +130,7 @@ else {
         <div class="row">
             <div class="col-md-7">
                 <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+                    <img src="http://placehold.it/700x300" alt="">
                 </a>
             </div>
             <div class="col-md-5">
@@ -231,7 +230,7 @@ else {
         <!-- /.row -->
 
 
-
+</div>
 	
 		<!-- FOOTER -->
 	<div id="f">
