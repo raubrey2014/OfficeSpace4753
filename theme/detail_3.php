@@ -105,23 +105,18 @@ else {
 
         <!-- Portfolio Item Row -->
         <div class="row">
-
             <div class="col-md-8">
                 <img class="img-responsive" src="assets/img/detailed_1.jpg" alt="">
             </div>
-
             <div class="col-md-4">
                 <h3>Description</h3>
-                <p>The Offices at Pin Oak Park is a five-building office campus in a beautiful park-like setting amongst 100-year-old oak trees.</p>
+                <p>The Offices at Pin Oak Park is a five-building office campus in a beautiful park-like setting amongst 100-year-old oak trees. 
+                Some of the many amenities include 24-hour security, after-hours card key access, and free visitor parking in elevator-equipped garages.</p>
                 <h3>Rental Information</h3>
 
                     <p>&emsp;&emsp;<b>Address</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;6750 West Loop South</p>
                     <p>&emsp;&emsp;<b>Available Space</b>&emsp;&emsp;&emsp;15,115 SF</p>
                     <p>&emsp;&emsp;<b>Rental Rate</b>&emsp;&emsp;&emsp;&emsp;&emsp;$28/SF Per Year</p>
-
-            </div>
-
-            <div class="col-md-4">
                 <h3>Contact Information</h3>
                 <p><b>&emsp;&emsp;Amanda Lee</b>&emsp;&emsp;703 - 566 - 2093 </p>
             </div>

@@ -97,7 +97,7 @@ else {
         <!-- Portfolio Item Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">The Offices at the LA Care Building
+                <h1 class="page-header">Mockingbird Towers
                 </h1>
             </div>
         </div>
@@ -105,25 +105,22 @@ else {
 
         <!-- Portfolio Item Row -->
         <div class="row">
-
             <div class="col-md-8">
-                <img class="img-responsive" src="assets/img/project_4.jpg" alt="">
+                <img class="img-responsive" src="assets/img/project_2.jpg" alt="">
             </div>
-
             <div class="col-md-4">
                 <h3>Description</h3>
-                <p> Brand new construction. 100 MBPS internet, coffee service, phone answering, conference room usage, concierge, and administrative support available. Rent includes utilities, cleaning service, 24/7 access, use of common areas such as business lounge, reception, kitchen, copy area, and more.</p>
-                
+                <p>On-site Conference Facility. On-site Deli. Views of Central Business District</p>
                 <h3>Rental Information</h3>
 
-                    <p>&emsp;&emsp;<b>Address</b>&emsp;&emsp;1055 West 7th Street</p>
-                    <p>&emsp;&emsp;<b>Available Space</b>&emsp;&emsp;&emsp;100,115 SF</p>
-                    <p>&emsp;&emsp;<b>Rental Rate</b>&emsp;&emsp;&emsp;&emsp;&emsp;$1.55/SF Per Month</p>
-                
-                <h3>Contact Information</h3>
-                <p><b>&emsp;&emsp;Ryan Stevens</b>&emsp;&emsp;804 - 809 - 2093 </p>
-            </div>
+                    <p>&emsp;&emsp;<b>Address</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;1341 W Mockbird Lane</p>
+                    <p>&emsp;&emsp;<b>Available Space</b>&emsp;&emsp;&emsp;229,197 SF</p>
+                    <p>&emsp;&emsp;<b>Rental Rate</b>&emsp;&emsp;&emsp;&emsp;&emsp;$15/SF Per Year</p>
 
+                <h3>Contact Information</h3>
+                <p><b>&emsp;&emsp;Dale Ray</b>&emsp;&emsp;753 - 925 - 6699 </p>
+
+            </div>
 
         </div>
         <!-- /.row -->

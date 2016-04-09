@@ -107,7 +107,7 @@ else {
         <div class="row">
 
             <div class="col-md-8">
-                <img class="img-responsive" src="assets/img/project_5.jpg" alt="">
+                <img class="img-responsive" src="assets/img/project_5.jpg" alt="" style="height:450px;">
             </div>
 
             <div class="col-md-4">
@@ -116,7 +116,7 @@ else {
                 
                 <h3>Rental Information</h3>
 
-                    <p>&emsp;&emsp;<b>Address</b>&emsp;&emsp;75 West Towne Ridge Parkway, Sandy, UT 84070</p>
+                    <p>&emsp;&emsp;<b>Address</b>&emsp;&emsp;75 West Towne Ridge Parkway</p>
                     <p>&emsp;&emsp;<b>Available Space</b>&emsp;&emsp;&emsp;125,000 SF</p>
                     <p>&emsp;&emsp;<b>Rental Rate</b>&emsp;&emsp;&emsp;&emsp;&emsp;$10.00/SF Per Year</p>
                 
