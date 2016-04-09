@@ -1,96 +1,66 @@
-<?php 
-session_start();
-
-if(isset($_SESSION["logged"]) && ($_SESSION["logged"] == true)){
-  $logged = $_SESSION["logged"];
-}
-else {
-  header("Location: index.php?signedin=false");
-  exit;
-}
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-    <title>Office Space</title>
+    <title>1 Col Portfolio - Start Bootstrap Template</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="assets/css/main.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/1-col-portfolio.css" rel="stylesheet">
 
-	<script src="assets/js/Chart.js"></script>
-
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
 
-  <body>
+</head>
 
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.php"><i class="fa fa-circle"></i>ffice Space</a>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Start Bootstrap</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="index.php">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="signup.php">SIGN UP</a></li>
-            <?php
-            if(isset($_SESSION["logged"])){
-              ?>
-                          <li class="active"><a href="signout.php">SIGN OUT</a></li>
-            <?php
-          }
-            else {
-              ?>
-              <li><a href="signin.php">SIGN IN</a></li>
-            <?php
-            }
-            ?>
+        <!-- /.container -->
+    </nav>
 
-           <!--  <li><a href="services.html">SERVICES</a></li>
-            <li><a href="works.html">WORKS</a></li> -->
-            <!-- <li><a data-toggle="modal" data-target="#myModal" href="#myModal"><i class="fa fa-envelope-o"></i></a></li> -->
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-
-	<div id="blue">
-		<div class="container">
-			<div class="row centered">
-				<div class="col-lg-8 col-lg-offset-2">
-				<h1 id='special_h1'><strong>Postings</strong></h1>
-				</div>
-			</div><!-- row -->
-		</div><!-- container -->
-	</div><!--  bluewrap -->
-
-<!-- Page Content -->
+    <!-- Page Content -->
     <div class="container">
 
         <!-- Page Heading -->
@@ -224,34 +194,27 @@ else {
         </div>
         <!-- /.row -->
 
+        <hr>
 
-
-	
-		<!-- FOOTER -->
-	<div id="f">
-		<div class="container">
-			<div class="row centered">
-				<div class="contact-cls">
-					<h1>CONTACT US</h1>
-                    <div>
-                        <span><i class="fa fa-home"></i>&nbsp; Address: Charlottesville, VA 29903</span>
-                        <span><i class="fa fa-phone"></i>&nbsp;Phone: +1 (540) 250 - 3750</span>
-                        <span><i class="fa fa-envelope-o"></i>&nbsp;E-Mail: officeSpace@gmail.com</span>
-                        <span><i class="fa fa-globe"></i>&nbsp;Web: www.officeSpace.com</span>
-
-                    </div>
-                  
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
                 </div>
-			</div><!-- row -->
-		</div><!-- container -->
-	</div><!-- Footer -->
+            </div>
+            <!-- /.row -->
+        </footer>
 
-	
+    </div>
+    <!-- /.container -->
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-  </body>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
 </html>
