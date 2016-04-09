@@ -85,6 +85,8 @@ else {
 			<div class="row centered">
 				<div class="col-lg-8 col-lg-offset-2">
 				<h1 id='special_h1'><strong>Postings</strong></h1>
+                <!-- <a class="btn btn-primary" href="#">Create New Posting    <i class="fa fa-pencil-square-o"></i></a> -->
+
 				</div>
 			</div><!-- row -->
 		</div><!-- container -->
@@ -95,11 +97,15 @@ else {
 
         <!-- Page Heading -->
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-10">
                 <h1 class="page-header">Page Heading
                     <small>Secondary Text</small>
                 </h1>
             </div>
+            <div class="col-lg-2">
+              <a class=" page-header btn btn-primary" href="#">Create New Posting  &nbsp; <i class="fa fa-pencil-square-o"></i></a>
+            </div>
+
         </div>
         <!-- /.row -->
 
@@ -114,7 +120,7 @@ else {
                 <h3>Project One</h3>
                 <h4>Subheading</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="btn btn-primary" href="item1.php">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
         <!-- /.row -->
@@ -150,7 +156,7 @@ else {
                 <h3>Project Three</h3>
                 <h4>Subheading</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!</p>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="btn btn-primary" href="">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
         <!-- /.row -->
