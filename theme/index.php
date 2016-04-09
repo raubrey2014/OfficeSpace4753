@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -42,10 +45,22 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="index.php">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="about.php">ABOUT</a></li>
             <li><a href="signup.php">SIGN UP</a></li>
-            <li><a href="signin.php">SIGN IN</a></li>
+			<?php
+            if(isset($_SESSION["logged"])){
+              ?>
+                <li><a href="member.php">DASHBOARD</a></li>
 
+                <li><a href="signout.php">SIGN OUT</a></li>
+            <?php
+          }
+            else {
+              ?>
+              <li><a href="signin.php">SIGN IN</a></li>
+            <?php
+            }
+            ?>
             <!-- <li><a href="works.html">WORKS</a></li> -->
             <!-- <li><a data-toggle="modal" data-target="#myModal" href="#myModal"><i class="fa fa-envelope-o"></i></a></li> -->
           </ul>
@@ -238,7 +253,7 @@
 				<div class="col-lg-8 col-lg-offset-2">
 					<h2>LEARN MORE</h2>
 					<h4>We are a client-driven company that strives to fill in the gaps in a unique market of buyers and sellers.</h4>
-                    <a href="about.html"><button type="submit" class="btn btn-primary">About Us</button></a>
+                    <a href="about.php"><button type="submit" class="btn btn-primary">About Us</button></a>
 				</div>
 			</div><!-- row -->
 		</div><!-- container -->

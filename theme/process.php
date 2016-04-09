@@ -1,5 +1,5 @@
 <?php
-echo "anything";
+session_start();
 
 $db = new mysqli('localhost', 'root', '', 'OfficeSpace2');
 if($db->connect_error){
@@ -19,6 +19,7 @@ if($db->connect_error){
     }
     else{
       $row = $result->fetch_array();
+      $_SESSION["logged"] = True; 
 
 
       //$_SESSION["logged"] = 1;

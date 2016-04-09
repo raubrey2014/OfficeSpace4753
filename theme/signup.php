@@ -91,10 +91,22 @@ session_start();
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="index.php">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="about.php">ABOUT</a></li>
             <li class='active'><a href="#">SIGN UP</a></li>
-            <li><a href="signin.php">SIGN IN</a></li>
+ <?php
+            if(isset($_SESSION["logged"])){
+              ?>
+                          <li><a href="member.php">DASHBOARD</a></li>
 
+                          <li><a href="signout.php">SIGN OUT</a></li>
+            <?php
+          }
+            else {
+              ?>
+              <li><a href="signin.php">SIGN IN</a></li>
+            <?php
+            }
+            ?>
            <!--  <li><a href="services.html">SERVICES</a></li>
             <li><a href="works.html">WORKS</a></li> -->
             <!-- <li><a data-toggle="modal" data-target="#myModal" href="#myModal"><i class="fa fa-envelope-o"></i></a></li> -->

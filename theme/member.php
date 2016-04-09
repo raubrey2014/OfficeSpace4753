@@ -1,13 +1,16 @@
 <?php 
 session_start();
 
-if(isset($_SESSION["logged"]) && ($_SESSION["logged"] == true)){
-  $logged = $_SESSION["logged"];
-}
-else {
+if(!isset($_SESSION["logged"])){
   header("Location: index.php?signedin=false");
   exit;
 }
+else{
+    if($_SESSION["logged"] == true){
+        $logged = $_SESSION["logged"];
+    }
+}
+
 
 ?>
 
@@ -56,7 +59,7 @@ else {
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="index.php">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="about.php">ABOUT</a></li>
             <li><a href="signup.php">SIGN UP</a></li>
             <?php
             if(isset($_SESSION["logged"])){

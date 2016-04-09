@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Send Mail Results</title>
-</head>
-<body>
 <?php
 
 function createMailer(){
@@ -44,5 +38,3 @@ function createMailer(){
    } 
    else { echo 'Message has been sent'; }*/
 ?>
-</body>
-</html>

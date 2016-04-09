@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION["logged"] = "HERE";
 ?>
 
 <!DOCTYPE html>
@@ -54,10 +53,22 @@ $_SESSION["logged"] = "HERE";
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="index.php">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="about.php">ABOUT</a></li>
             <li><a href="signup.php">SIGN UP</a></li>
-            <li class='active'><a href="#">SIGN IN</a></li>
+ <?php
+            if(isset($_SESSION["logged"])){
+              ?>
+                          <li><a href="member.php">DASHBOARD</a></li>
 
+                          <li><a href="signout.php">SIGN OUT</a></li>
+            <?php
+          }
+            else {
+              ?>
+              <li class="active"><a href="signin.php">SIGN IN</a></li>
+            <?php
+            }
+            ?>
            <!--  <li><a href="services.html">SERVICES</a></li>
             <li><a href="works.html">WORKS</a></li> -->
             <!-- <li><a data-toggle="modal" data-target="#myModal" href="#myModal"><i class="fa fa-envelope-o"></i></a></li> -->
@@ -75,38 +86,7 @@ $_SESSION["logged"] = "HERE";
 			</div><!-- row -->
 		</div><!-- container -->
 	</div><!--  bluewrap -->
-<?php
 
-
-$db = new mysqli('localhost', 'root', '', 'OfficeSpace2');
-if($db->connect_error){
-  die("Could not connect to db " . $db->connect_error);
-}
-
-
-if(isset($_POST["submit"])){
-  $email = $_POST["email"];
-  $password = $_POST["password"];
-  echo "submitted";
-    $result = $db->query("SELECT * from Member where email='$email' AND password='$password'");
-    $rowCount = $result->num_rows;
-    if($rowCount == 0){
-    #header('Location: login.php');
-      echo "Incorrect Login";
-    }
-    else{
-      $row = $result->fetch_array();
-      $_SESSION["logged"] = true;
-      //$_SESSION["logged"] = 1;
-      header('Location: member.php');
-      exit;
-    }
-
-   
-
-
- }
-?>
 <div id="custom-wrapper2">
 	<div class="container w">
     <!--REGISTRATION FORM HTML-->
