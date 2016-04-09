@@ -100,6 +100,7 @@ else {
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-10">
+
                 <h1 class="page-header">Properties: 1-5
                     <small></small>
                 </h1>
