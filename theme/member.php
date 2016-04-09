@@ -84,38 +84,156 @@ else {
 		<div class="container">
 			<div class="row centered">
 				<div class="col-lg-8 col-lg-offset-2">
-				<h1 id='special_h1'><strong>MEMBER PAGE</strong></h1>
+				<h1 id='special_h1'><strong>Postings</strong></h1>
+                <!-- <a class="btn btn-primary" href="#">Create New Posting    <i class="fa fa-pencil-square-o"></i></a> -->
+
 				</div>
 			</div><!-- row -->
 		</div><!-- container -->
 	</div><!--  bluewrap -->
 
-
-<!-- PORTFOLIO SECTION -->
-  <div id="dg">
+<!-- Page Content -->
     <div class="container">
-      <div class="row centered">
-        <h2><b>Hear It First Hand</b></h2>
-        <br>
-        <div class="col-lg-4">
-        <img class="img-circle" src="assets/img/modern_office.jpg" width="300" height="300" alt="">
-        <p><b>"Office Space provided a scalable work space solution for my growing IT business."</b><br> -CEO John Doe of IT Inc., New York, NY</p>
+
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-10">
+                <h1 class="page-header">Page Heading
+                    <small>Secondary Text</small>
+                </h1>
+            </div>
+            <div class="col-lg-2">
+              <a class=" page-header btn btn-primary" href="#">Create New Posting  &nbsp; <i class="fa fa-pencil-square-o"></i></a>
+            </div>
+
         </div>
+        <!-- /.row -->
 
-        <div class="col-lg-4">
-        <img class="img-circle" src="assets/img/modern_office2.jpg" width="300" height="300" alt="">
-        <p><b>"Office Space's intuitive, user-oriented design, and end-to-end functionality makes them a leader in painless work space services."</b><br> -HR Rep Sally Baker Company Inc., Cincinatti, OH</p>
+        <!-- Project One -->
+        <div class="row">
+            <div class="col-md-7">
+                <a href="#">
+                    <img class="img-responsive" src="assets/img/project_1.jpg" alt="" style="width:700px;height:300px;">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>2901 North Ashton Blvd.</h3>
+                <h4>Lehi, UT 84043 · 58,800 SF · Office For Lease</h4>
+                <p>5 Story Class A Office Building, completion April 1, 2016 with 54,800 square feet available on 2nd and 3rd Floors. Modern, progressive architecture. Excellent I-15 and SR 92 access. Located adjacent to the Thanksgiving Park Office Campus.</p>
+                <a class="btn btn-primary" href="item1.php">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
         </div>
+        <!-- /.row -->
 
-        <div class="col-lg-4">
-        <img class="img-circle" src="assets/img/exec_office.jpg" width="300" height="300" alt="">
-        <p><b>"Only Office Space was able to provide the personalized experience I needed when I started my own business."</b> <br>-Independent Consultant John Smith, Richmond, VA</p>
+        <hr>
+
+        <!-- Project Two -->
+        <div class="row">
+            <div class="col-md-7">
+                <a href="#">
+                    <img class="img-responsive" src="assets/img/project_2.jpg" alt="" style="width:700px;height:300px;">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>1341 W Mockingbird Lane</h3>
+                <h4>Dallas, TX 75247 · 229,197 SF · Office For Lease</h4>
+                <p>On-site Conference Facility. On-site Deli. Views of Central Business District</p>
+                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
         </div>
-      </div><!-- row -->
-    </div><!-- container -->
-  </div><!-- DG -->
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Project Three -->
+        <div class="row">
+            <div class="col-md-7">
+                <a href="#">
+                    <img class="img-responsive" src="assets/img/project_3.jpg" alt="" style="width:700px;height:300px;">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>6750 West Loop South</h3>
+                <h4>Bellaire, TX 77401 · 15,115 SF · Office For Lease</h4>
+                <p>The Offices at Pin Oak Park is a five-building office campus in a beautiful park-like setting amongst 100-year-old oak trees. 
+                Some of the many amenities include 24-hour security, after-hours card key access, free visitor parking in elevator-equipped garages, 
+                on-site banks and delicatessens, US Mail and overnight shipping drop-boxes, maid and porter service, fully staffed on-site engineering and management teams. Move-in ready suites are available.</p>
+                <a class="btn btn-primary" href="">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
 
 
+        <!-- Project Four -->
+        <div class="row">
+
+            <div class="col-md-7">
+                <a href="#">
+                    <img class="img-responsive" src="assets/img/project_4.jpg" alt="" style="width:700px;height:300px;">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>1055 West 7th Street</h3>
+                <h4>Los Angeles, CA 90017 · 8,420 SF · Office For Lease</h4>
+                <p>Fully Furnished Office Suites available on the Penthouse Floor of the LA Care Building with breathtaking unobstructed views of Downtown LA, West LA, Stadium Hill and out to the ocean. Brand new construction. 100 MBPS internet, coffee service, phone answering, conference room usage, concierge, and administrative support available. 
+                Rent includes utilities, cleaning service, 24/7 access, use of common areas such as business lounge, reception, kitchen, copy area, and more.</p>
+                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Project Five -->
+        <div class="row">
+            <div class="col-md-7">
+                <a href="#">
+                    <img class="img-responsive" src="assets/img/project_5.jpg" alt="" style="width:700px;height:300px;">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>75 West Towne Ridge Parkway</h3>
+                <h4>Sandy, UT 84070 · 125,000 SF · Office For Lease</h4>
+                <p>Class A Office Park. 25,000 rentable square foot floor plates. Generous improvement allowances. Excellent parking.Excellent location in Sandy.</p>
+                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">&laquo;</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
 
 
 
