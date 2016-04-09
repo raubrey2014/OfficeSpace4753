@@ -113,13 +113,13 @@ else {
         <div class="row">
             <div class="col-md-7">
                 <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+                    <img class="img-responsive" src="assets/img/project_1.jpg" alt="" style="width:700px;height:300px;">
                 </a>
             </div>
             <div class="col-md-5">
-                <h3>Project One</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+                <h3>2901 North Ashton Blvd.</h3>
+                <h4>Lehi, UT 84043 · 58,800 SF · Office For Lease</h4>
+                <p>5 Story Class A Office Building, completion April 1, 2016 with 54,800 square feet available on 2nd and 3rd Floors. Modern, progressive architecture. Excellent I-15 and SR 92 access. Located adjacent to the Thanksgiving Park Office Campus.</p>
                 <a class="btn btn-primary" href="item1.php">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
@@ -131,13 +131,13 @@ else {
         <div class="row">
             <div class="col-md-7">
                 <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+                    <img class="img-responsive" src="assets/img/project_2.jpg" alt="" style="width:700px;height:300px;">
                 </a>
             </div>
             <div class="col-md-5">
-                <h3>Project Two</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.</p>
+                <h3>1341 W Mockingbird Lane</h3>
+                <h4>Dallas, TX 75247 · 229,197 SF · Office For Lease</h4>
+                <p>On-site Conference Facility. On-site Deli. Views of Central Business District</p>
                 <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
@@ -149,13 +149,15 @@ else {
         <div class="row">
             <div class="col-md-7">
                 <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+                    <img class="img-responsive" src="assets/img/project_3.jpg" alt="" style="width:700px;height:300px;">
                 </a>
             </div>
             <div class="col-md-5">
-                <h3>Project Three</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!</p>
+                <h3>6750 West Loop South</h3>
+                <h4>Bellaire, TX 77401 · 15,115 SF · Office For Lease</h4>
+                <p>The Offices at Pin Oak Park is a five-building office campus in a beautiful park-like setting amongst 100-year-old oak trees. 
+                Some of the many amenities include 24-hour security, after-hours card key access, free visitor parking in elevator-equipped garages, 
+                on-site banks and delicatessens, US Mail and overnight shipping drop-boxes, maid and porter service, fully staffed on-site engineering and management teams. Move-in ready suites are available.</p>
                 <a class="btn btn-primary" href="">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
@@ -168,13 +170,14 @@ else {
 
             <div class="col-md-7">
                 <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+                    <img class="img-responsive" src="assets/img/project_4.jpg" alt="" style="width:700px;height:300px;">
                 </a>
             </div>
             <div class="col-md-5">
-                <h3>Project Four</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?</p>
+                <h3>1055 West 7th Street</h3>
+                <h4>Los Angeles, CA 90017 · 8,420 SF · Office For Lease</h4>
+                <p>Fully Furnished Office Suites available on the Penthouse Floor of the LA Care Building with breathtaking unobstructed views of Downtown LA, West LA, Stadium Hill and out to the ocean. Brand new construction. 100 MBPS internet, coffee service, phone answering, conference room usage, concierge, and administrative support available. 
+                Rent includes utilities, cleaning service, 24/7 access, use of common areas such as business lounge, reception, kitchen, copy area, and more.</p>
                 <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
@@ -186,13 +189,13 @@ else {
         <div class="row">
             <div class="col-md-7">
                 <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+                    <img class="img-responsive" src="assets/img/project_5.jpg" alt="" style="width:700px;height:300px;">
                 </a>
             </div>
             <div class="col-md-5">
-                <h3>Project Five</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident ex quisquam hic odio repellendus atque porro distinctio quae id laboriosam facilis dolorum.</p>
+                <h3>75 West Towne Ridge Parkway</h3>
+                <h4>Sandy, UT 84070 · 125,000 SF · Office For Lease</h4>
+                <p>Class A Office Park. 25,000 rentable square foot floor plates. Generous improvement allowances. Excellent parking.Excellent location in Sandy.</p>
                 <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
