@@ -121,7 +121,7 @@ else {
                 <h3>2901 North Ashton Blvd.</h3>
                 <h4>Lehi, UT 84043 · 58,800 SF · Office For Lease</h4>
                 <p>5 Story Class A Office Building, completion April 1, 2016 with 54,800 square feet available on 2nd and 3rd Floors. Modern, progressive architecture. Excellent I-15 and SR 92 access. Located adjacent to the Thanksgiving Park Office Campus.</p>
-                <a class="btn btn-primary" href="item1.php">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="btn btn-primary" href="detail_1.php">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
         <!-- /.row -->
@@ -139,7 +139,7 @@ else {
                 <h3>1341 W Mockingbird Lane</h3>
                 <h4>Dallas, TX 75247 · 229,197 SF · Office For Lease</h4>
                 <p>On-site Conference Facility. On-site Deli. Views of Central Business District</p>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="btn btn-primary" href="detail_2.php">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
         <!-- /.row -->
@@ -159,7 +159,7 @@ else {
                 <p>The Offices at Pin Oak Park is a five-building office campus in a beautiful park-like setting amongst 100-year-old oak trees. 
                 Some of the many amenities include 24-hour security, after-hours card key access, free visitor parking in elevator-equipped garages, 
                 on-site banks and delicatessens, US Mail and overnight shipping drop-boxes, maid and porter service, fully staffed on-site engineering and management teams. Move-in ready suites are available.</p>
-                <a class="btn btn-primary" href="">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="btn btn-primary" href="detail_3.php">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
         <!-- /.row -->

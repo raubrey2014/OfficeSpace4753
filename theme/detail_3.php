@@ -97,7 +97,7 @@ else {
         <!-- Portfolio Item Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Lehi Station
+                <h1 class="page-header">The Offices at Pin Oak Park
                 </h1>
             </div>
         </div>
@@ -106,19 +106,20 @@ else {
         <!-- Portfolio Item Row -->
         <div class="row">
             <div class="col-md-8">
-                <img class="img-responsive" src="assets/img/project_1.jpg" alt="">
+                <img class="img-responsive" src="assets/img/detailed_1.jpg" alt="">
             </div>
             <div class="col-md-4">
                 <h3>Description</h3>
-                <p>5 Story Class A Office Building, completion April 1, 2016 with 54,800 square feet available on 2nd and 3rd Floors. Modern, progressive architecture. Excellent I-15 and SR 92 access. Located adjacent to the Thanksgiving Park Office Campus.</p>
+                <p>The Offices at Pin Oak Park is a five-building office campus in a beautiful park-like setting amongst 100-year-old oak trees. 
+                Some of the many amenities include 24-hour security, after-hours card key access, and free visitor parking in elevator-equipped garages.</p>
                 <h3>Rental Information</h3>
 
-                    <p>&emsp;&emsp;<b>Address</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2901 N Ashton Blvd</p>
-                    <p>&emsp;&emsp;<b>Available Space</b>&emsp;&emsp;&emsp;27,400 SF</p>
-                    <p>&emsp;&emsp;<b>Rental Rate</b>&emsp;&emsp;&emsp;&emsp;&emsp;$26.50/SF Per Year</p>
+                    <p>&emsp;&emsp;<b>Address</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;6750 West Loop South</p>
+                    <p>&emsp;&emsp;<b>Available Space</b>&emsp;&emsp;&emsp;15,115 SF</p>
+                    <p>&emsp;&emsp;<b>Rental Rate</b>&emsp;&emsp;&emsp;&emsp;&emsp;$28/SF Per Year</p>
 
                 <h3>Contact Information</h3>
-                <p><b>&emsp;&emsp;Brandon Fugal</b>&emsp;&emsp;801 - 968 - 1045 </p>
+                <p><b>&emsp;&emsp;Amanda Lee</b>&emsp;&emsp;703 - 566 - 2093 </p>
 
             </div>
 

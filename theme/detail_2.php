@@ -97,7 +97,7 @@ else {
         <!-- Portfolio Item Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Lehi Station
+                <h1 class="page-header">Mockingbird Towers
                 </h1>
             </div>
         </div>
@@ -106,19 +106,19 @@ else {
         <!-- Portfolio Item Row -->
         <div class="row">
             <div class="col-md-8">
-                <img class="img-responsive" src="assets/img/project_1.jpg" alt="">
+                <img class="img-responsive" src="assets/img/project_2.jpg" alt="">
             </div>
             <div class="col-md-4">
                 <h3>Description</h3>
-                <p>5 Story Class A Office Building, completion April 1, 2016 with 54,800 square feet available on 2nd and 3rd Floors. Modern, progressive architecture. Excellent I-15 and SR 92 access. Located adjacent to the Thanksgiving Park Office Campus.</p>
+                <p>On-site Conference Facility. On-site Deli. Views of Central Business District</p>
                 <h3>Rental Information</h3>
 
-                    <p>&emsp;&emsp;<b>Address</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2901 N Ashton Blvd</p>
-                    <p>&emsp;&emsp;<b>Available Space</b>&emsp;&emsp;&emsp;27,400 SF</p>
-                    <p>&emsp;&emsp;<b>Rental Rate</b>&emsp;&emsp;&emsp;&emsp;&emsp;$26.50/SF Per Year</p>
+                    <p>&emsp;&emsp;<b>Address</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;1341 W Mockbird Lane</p>
+                    <p>&emsp;&emsp;<b>Available Space</b>&emsp;&emsp;&emsp;229,197 SF</p>
+                    <p>&emsp;&emsp;<b>Rental Rate</b>&emsp;&emsp;&emsp;&emsp;&emsp;$15/SF Per Year</p>
 
                 <h3>Contact Information</h3>
-                <p><b>&emsp;&emsp;Brandon Fugal</b>&emsp;&emsp;801 - 968 - 1045 </p>
+                <p><b>&emsp;&emsp;Dale Ray</b>&emsp;&emsp;753 - 925 - 6699 </p>
 
             </div>
 
